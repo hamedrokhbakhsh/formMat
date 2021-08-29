@@ -1,0 +1,17 @@
+<label>{{label}}</label>
+<input
+  [type]="type"
+  class="form-control"
+  [ngClass]="{'input-error': control?.errors && control?.touched}"
+  (input)="onChange($event)"
+  (blur)="_onTouched()"
+  [placeholder]="label">
+<ng-container *ngIf="control?.errors && (control?.touched || control?.dirty)" >
+  <span *ngIf="control?.errors?.required">*{{label}} is required</span>
+  <span *ngIf="control?.errors?.email">*is not email</span>
+  <span *ngIf="control?.errors?.minlength">*{{label}} most more than {{control?.errors?.minlength?.actualLength}}/{{control?.errors?.minlength?.requiredLength}}</span>
+  <span *ngIf="control?.errors?.maxlength">*{{label}} most less than {{control?.errors?.maxlength?.actualLength}}/{{control?.errors?.maxlength?.requiredLength}}</span>
+  <span *ngIf="control?.errors?.max">*{{label}} most less than {{control?.errors?.max?.actual}}/{{control?.errors?.max?.max}}</span>
+  <span *ngIf="control?.errors?.min">*{{label}} most less than {{control?.errors?.min?.actual}}/{{control?.errors?.min?.min}}</span>
+  <span *ngIf="control?.errors?.pattern">*doesn't match </span>
+</ng-container>
