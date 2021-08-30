@@ -13,43 +13,43 @@ import {
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
   providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: InputComponent,
-    multi: true
-  },
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: InputComponent,
+      multi: true
+    },
     {
       provide: NG_VALIDATORS,
       useExisting: InputComponent,
       multi: true,
-    },]
+    }]
 })
-export class InputComponent implements OnInit,ControlValueAccessor, Validator {
+export class InputComponent implements OnInit, ControlValueAccessor, Validator {
+
+
+  /*data from form*/
+  @Input() label: string = "";
+  @Input() type: string = 'text';
 
   value: string | undefined;
 
-  /*data from form*/
-  @Input() label: string= "" ;
-  @Input() type: string = 'text';
+  change: any = () => {
+  }
 
-
-  change: any = () => {}
-
-   _onTouched: any = () => {};
+  _onTouched: any = () => {
+  };
 
 
   control: AbstractControl | undefined;
 
 
-
-
-
-  constructor(private  _renderer: Renderer2, private _elementRef: ElementRef) { }
+  constructor(private _renderer: Renderer2, private _elementRef: ElementRef) {
+  }
 
   ngOnInit(): void {
   }
 
   public onChange(event: Event): void {
-    const value: string = ( <HTMLInputElement>event.target).value;
+    const value: string = (<HTMLInputElement>event.target).value;
     this.change(value);
   }
 
@@ -75,7 +75,7 @@ export class InputComponent implements OnInit,ControlValueAccessor, Validator {
   validate(control: AbstractControl): ValidationErrors | null {
     //return undefined;
     this.control = control;
-    console.log(this.control)
+    // console.log(this.control)
     return (!this.value) ? null : {
       jsonParseError: {
         valid: false,

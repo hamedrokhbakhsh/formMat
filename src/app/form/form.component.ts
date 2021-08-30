@@ -11,8 +11,8 @@ export class FormComponent implements OnInit {
   pattern = "[2-6]"
 
   form = this._fb.group({
-    email: ['', [Validators.required, Validators.pattern(this.pattern)]],
-    password: ['', [Validators.required, Validators.minLength(8)]]
+    email: ['', [Validators.required,]],
+    acceptTerms: [false, Validators.requiredTrue]
   })
 
   constructor(private _fb: FormBuilder) { }
