@@ -6,7 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormModule} from "./form/form.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {InboxMessageModule} from "./inbox-message/inbox-message.module";
+import {MatCardModule} from "@angular/material/card";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatInputModule} from "@angular/material/input";
+import {MatIconModule} from "@angular/material/icon";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -19,7 +25,11 @@ import {InboxMessageModule} from "./inbox-message/inbox-message.module";
     BrowserAnimationsModule,
     FormModule,
     NgbModule,
-    InboxMessageModule
+    MatCardModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

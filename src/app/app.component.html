@@ -1,1 +1,60 @@
-<app-inbox-message></app-inbox-message>
+
+<div class="row  mt-5">
+  <div class="col">
+    <mat-card>
+      <mat-card-content>
+        <form class="row">
+          <mat-form-field class="col-3 col-md-6" >
+            <mat-label>عنوان جستجو</mat-label>
+            <input matInput placeholder="متن جستجو" >
+          </mat-form-field>
+          <mat-form-field class="col-3 col-md-6">
+            <mat-label>از تاریخ</mat-label>
+            <input matInput [matDatepicker] = "picker1" placeholder = "Choose a date">
+            <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field class="col-3 col-md-6">
+            <mat-label>تا تاریخ</mat-label>
+            <input matInput [matDatepicker] = "picker2" placeholder = "Choose a date">
+            <mat-datepicker-toggle matSuffix [for] = "picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+          <div class="action d-flex align-items-center">
+            <button  color="primary" mat-raised-button>جستجو</button>
+
+          </div>
+        </form>
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+</div>
+<!--
+<div class="row">
+
+  <mat-form-field class="col-3" >
+    <mat-label>Favorite food</mat-label>
+    <input matInput placeholder="Ex. Pizza" >
+  </mat-form-field>
+
+
+  <mat-form-field class="col-4">
+    <mat-label>از تاریخ</mat-label>
+    <input matInput [matDatepicker] = "picker1" placeholder = "Choose a date">
+    <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="col-4">
+    <mat-label>تا تاریخ</mat-label>
+    <input matInput [matDatepicker] = "picker2" placeholder = "Choose a date">
+    <mat-datepicker-toggle matSuffix [for] = "picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="col-4">
+    <button class="col-4" color="primary" mat-raised-button>جستجو</button>
+
+  </mat-form-field>
+</div>-->
