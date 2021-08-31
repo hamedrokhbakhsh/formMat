@@ -6,17 +6,20 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormModule} from "./form/form.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {InboxMessageModule} from "./inbox-message/inbox-message.module";
 
 @NgModule({
   declarations: [
     AppComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormModule,
-    NgbModule
+    NgbModule,
+    InboxMessageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
